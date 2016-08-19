@@ -1,24 +1,28 @@
 #MovieTweetings
+##Some stats
+
+Metric | Value
+--- | ---
+Total number of ratings                 | 524,717
+Number of unique users                  | 44,201
+Number of unique items                  | 25,598
+These stats were last autocalculated on Fri Aug 19 00:34:22 CEST 2016  ([more stats here](./stats.md))
+
 ##A Movie Rating Dataset Collected From Twitter
 
-MovieTweetings is a dataset consisting of ratings on movies that were contained in well-structured tweets on Twitter. This dataset is the result of research conducted by [Simon Dooms] (http://scholar.google.be/citations?user=owaD8qkAAAAJ) (Ghent University, Belgium) and has been presented on the [CrowdRec 2013 workshop](http://crowdrec2013.noahlab.com.hk) which is co-located with the [ACM RecSys 2013 conference](http://recsys.acm.org/recsys13/). Please cite the [corresponding paper](http://crowdrec2013.noahlab.com.hk/papers/crowdrec2013_Dooms.pdf) if you make use of this dataset. The presented slides can be found [on slideshare] (http://www.slideshare.net/simondooms/movie-tweetings-a-movie-rating-dataset-collected-from-twitter). 
+MovieTweetings is a dataset consisting of ratings on movies that were contained in well-structured tweets on Twitter. This dataset is the result of research conducted by [Simon Dooms] (http://scholar.google.be/citations?user=owaD8qkAAAAJ) (Ghent University, Belgium) and has been presented on the [CrowdRec 2013 workshop](http://crowdrec2013.noahlab.com.hk) which is co-located with the [ACM RecSys 2013 conference](http://recsys.acm.org/recsys13/). Please cite the [corresponding paper](http://crowdrec2013.noahlab.com.hk/papers/crowdrec2013_Dooms.pdf) if you make use of this dataset. The presented slides can be found [on slideshare] (http://www.slideshare.net/simondooms/movie-tweetings-a-movie-rating-dataset-collected-from-twitter).
 
-Daily updated statistics and visualizations are [available here](http://www.themoviebrain.com/otherprojects/mt/). [Follow us on Twitter](https://twitter.com/mvtweetings) for the latest news, info and fun facts about the dataset.
+Follow us on Twitter ([@mvtweetings](https://twitter.com/mvtweetings)) for the latest news, info and fun facts about the dataset.
 
-    @conference{Dooms13crowdrec,
-    author = {Dooms, Simon and De Pessemier, Toon and Martens, Luc},
-    title = {MovieTweetings: a Movie Rating Dataset Collected From Twitter},
-    booktitle = {Workshop on Crowdsourcing and Human Computation for Recommender Systems, CrowdRec at RecSys 2013},
-    year = {2013}
-    }
+Bibtex: *@conference{Dooms13crowdrec, author = {Dooms, Simon and De Pessemier, Toon and Martens, Luc}, title = {MovieTweetings: a Movie Rating Dataset Collected From Twitter}, booktitle = {Workshop on Crowdsourcing and Human Computation for Recommender Systems, CrowdRec at RecSys 2013}, year = {2013} }*
 
-An excerpt of the abstract of the paper: 
+An excerpt of the abstract of the paper:
 
 > Public rating datasets, like MovieLens or Netflix, have long been popular and widely used in the recommender systems domain for experimentation and comparison. More and more however they are becoming outdated and fail to incorporate new and relevant items. In our work, we tap into the vast availability of social media and construct a new movie rating dataset 'MovieTweetings' based on public and well-structured tweets. With the addition of around 500 new ratings per day we believe this dataset can be very useful as an always up-to-date and natural rating dataset for movie recommenders.
 
 The goal of this dataset is to provide the RecSys community with a live, natural and always up-to-date movie ratings dataset. The dataset will be updated as much as possible to incorporate rating data from the newest tweets available. The earliest rating contained in this dataset is from 28 Feb 2013, and I pledge to keep this system up and running for as long as I can. Note however that this dataset is automatically gathered and therefore depending on the continuation of the IMDb apps and Twitter API.
 
-Don't hesitate to contact me for any comments, questions or proposals you might have. 
+Don't hesitate to contact me for any comments, questions or proposals you might have.
 
 ##Ratings from Twitter
 
@@ -28,13 +32,11 @@ As said, this dataset consists of ratings extracted from tweets. To be able to e
 
 On a daily basis the Twitter API is queried for the term **"I rated #IMDb"**. Through a series of regular expressions, relevant information such as user, movie and rating is extracted, and cross-referenced with the according IMDb page to provide also genre metadata. The numeric IMDb identifier was adopted as item id to facilitate additional metadata enrichment and guarantee movie uniqueness. For example, for the above tweet the item id would be **"0133093"** which allows to infer the corresponding IMDb page link (add *http://www.imdb.com/title/tt*). The user id simply ranges from 1 to the number of users.
 
-On June 11, 2013 [support for the Twitter API v1 was retired](https://dev.twitter.com/blog/api-v1-retirement-date-extended-to-june-11) in favor of v1.1. This resulted in a lower number of collected tweets that day ([image](http://wicaserv5.intec.ugent.be/mt/ratingsperday.jpg)).
-
 ##The dataset
 
-Since this dataset will be updated regularly we have structured the dataset in different folders /latest and /snapshots. The /latest folder will always contain the complete dataset as available at the time of the commit, while the /snapshots contain fixed portions of the dataset to allow experimentation and reproducibility of research. The *10K* snapshot represents the ratings from the first 10,000 collected tweets, *20K* the first 20,000, and so on.  
+Since this dataset will be updated regularly we have structured the dataset in different folders /latest and /snapshots. The /latest folder will always contain the complete dataset as available at the time of the commit, while the /snapshots contain fixed portions of the dataset to allow experimentation and reproducibility of research. The *10K* snapshot represents the ratings from the first 10,000 collected tweets, *20K* the first 20,000, and so on.
 
-The dataset files are modeled after the [MovieLens dataset] (http://www.grouplens.org/node/73) to make them as interchangeable as possible. There are three files: **users.dat**, **items.dat** and **ratings.dat**. 
+The dataset files are modeled after the [MovieLens dataset] (http://www.grouplens.org/node/73) to make them as interchangeable as possible. There are three files: **users.dat**, **items.dat** and **ratings.dat**.
 
 ###users.dat
 
@@ -75,5 +77,16 @@ in Collaborative Filtering Systems
 - [ConcertTweets: A Multi-Dimensional Data Set for Recommender Systems Research](http://people.stern.nyu.edu/padamopo/data/ConcertTweets.pdf)
 - [On over-specialization and concentration bias of recommendations: probabilistic neighborhood selection in collaborative filtering systems](http://dl.acm.org/citation.cfm?id=2645752)
 - [Recommender systems challenge 2014](http://dl.acm.org/citation.cfm?id=2645779)
+- [CrowdRec project](http://crowdrec.eu/)
+- [Comparing a Social Robot and a Mobile Application for Movie Recommendation: A Pilot Study](http://ceur-ws.org/Vol-1382/paper5.pdf)
+- [Augmenting a Feature Set of Movies Using Linked Open Data](https://www.csw.inf.fu-berlin.de/ruleml2015-ceur/paper16.pdf)
+- [Adaptive User Engagement Evaluation via Multi-task Learning](http://dl.acm.org/citation.cfm?id=2767785)
+- [Crowd Source Movie Ratings Based on Twitter Data Analytics](http://csus-dspace.calstate.edu/bitstream/handle/10211.3/138435/2015HolikattiPriya.pdf)
+- [Combining similarity and sentiment in opinion mining for product recommendation](http://link.springer.com/article/10.1007/s10844-015-0379-y)
+- [7 Relevance of Social Data in Video Recommendation](https://comcast.app.box.com/recsystv-2015-xu)
+- [Positive-Unlabeled Learning in Streaming Networks](http://www.kdd.org/kdd2016/subtopic/view/positive-unlabeled-learning-in-streaming-networks)
+- [Unexpectedness and Non-Obviousness in Recommendation Technologies and Their Impact on Consumer Decision Making](http://people.stern.nyu.edu/padamopo/thesis_draft.pdf)
+- [Corporate Smart Content Evaluation](http://www.diss.fu-berlin.de/docs/servlets/MCRFileNodeServlet/FUDOCS_derivate_000000006523/CSCStudie2016.pdf)
+- [(Book!) Mastering Python Data Analysis](https://www.packtpub.com/big-data-and-business-intelligence/mastering-python-data-analysis)
 
 [Contact me](http://twitter.com/sidooms) if you know of any work (maybe your own?) that can be added to this list!
